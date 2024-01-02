@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="da_bbeest_aappp.Groups"
+             Title="Groups">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25">
+            <CollectionView>
+                <CollectionView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Englisch-Gruppe</x:String>
+                        <x:String>Französisch-Gruppe</x:String>
+                        <x:String>Hausaufgaben</x:String>
+                    </x:Array>
+                </CollectionView.ItemsSource>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <HorizontalStackLayout Padding="10" Spacing="10" VerticalOptions="Center">
+                            
+                            <Image Source="group_pic.png" WidthRequest="50" HeightRequest="50" Aspect="AspectFill"/>
+                            
+                            <Label Text="{Binding .}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" WidthRequest="150"/>
+                           
+                            <CheckBox VerticalOptions="Center" HorizontalOptions="End"/>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>

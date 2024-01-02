@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="da_bbeest_aappp.Settings"
+             Title="Settings">
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Padding="30">
+
+            <!-- Slider (Switch) for notifications -->
+            <Label Text="Benachrichtigungen" FontSize="Medium" />
+            <Switch HorizontalOptions="Start" />
+
+            <!-- Radio Buttons for name visibility options -->
+            <Label Text="Name Sichtbarkeit" FontSize="Medium" />
+            
+            <RadioButton Content="name für alle sichtbar" />
+            <RadioButton Content="name nur für gruppe" />
+            <RadioButton Content="name unsichtbar" />
+
+
+            <!-- DatePicker for selecting available dates -->
+            <Label Text="Verfügbar ab:" FontSize="Medium" />
+            <DatePicker />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
