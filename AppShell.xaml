@@ -6,10 +6,18 @@
     xmlns:local="clr-namespace:da_bbeest_aappp"
     Shell.FlyoutBehavior="Disabled">
 
-    <TabBar>
-        <ShellContent Title="Home" Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}" />
+
+
+    <ShellContent Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}" />
+    
+    <TabBar >
+        
+        
         <ShellContent Title="Chats" Route="Chats" ContentTemplate="{DataTemplate local:Chats}" />
         <ShellContent Title="Groups" Route="Groups" ContentTemplate="{DataTemplate local:Groups}" />
         <ShellContent Title="Settings" Route="Settings" ContentTemplate="{DataTemplate local:Settings}" />
     </TabBar>
+
+    <ShellContent Route="ChatDetailPage" ContentTemplate="{DataTemplate local:ChatDetailPage}" />
+
 </Shell>

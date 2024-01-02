@@ -3,10 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="da_bbeest_aappp.Chats"
              Title="Chats">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI! HERE U SEE DA CHATS!!!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <CollectionView SelectionMode="Single" SelectionChanged="OnSelectionChanged">
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Emily Johnson</x:String>
+                    <x:String>Michael Brown</x:String>
+                    <x:String>Emma Wilson</x:String>
+                    <x:String>Oliver Smith</x:String>
+                    <x:String>Isabella Martinez</x:String>
+                    <x:String>Liam Anderson</x:String>
+                    <x:String>Sophia Taylor</x:String>
+                    <x:String>Noah Davis</x:String>
+                    <x:String>Ava Garcia</x:String>
+                    <x:String>William Rodriguez</x:String>
+
+                    <!-- Add more chat names here -->
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout Padding="10">
+                        <!-- Replace with your image source -->
+                        <Image Source="pfp.jpg" WidthRequest="50" HeightRequest="50" Aspect="AspectFill"/>
+                        <Label Text="{Binding .}" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ScrollView>
+
 </ContentPage>
