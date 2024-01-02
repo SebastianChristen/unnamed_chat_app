@@ -38,11 +38,13 @@
 
             <!-- Start Button -->
             <Button
+                x:Name="GoToChatsButton"
                 Text="Start"
                 BackgroundColor="#007bff"
                 TextColor="White"
                 HorizontalOptions="Fill"
-                CornerRadius="5" />
+                CornerRadius="5"
+                Clicked="GoToChatsButton_Clicked" />    
 
         </VerticalStackLayout>
     </ScrollView>

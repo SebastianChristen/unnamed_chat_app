@@ -20,5 +20,11 @@
 
             //SemanticScreenReader.Announce(CounterBtn.Text);
         }
+
+        private async void GoToChatsButton_Clicked(object sender, EventArgs e)
+        {
+            // Navigate to the Chats page
+            await Shell.Current.GoToAsync("///Chats");
+        }
     }
 }
