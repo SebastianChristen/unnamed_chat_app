@@ -53,7 +53,11 @@ public partial class ChatDetailPage : ContentPage
     }
 
 
-
+    private async void OnBackButtonClicked(object sender, EventArgs e)
+    {
+        // Use Shell navigation to go back to the previous page in the navigation stack
+        await Shell.Current.GoToAsync("///Chats");
+    }
 
 
 

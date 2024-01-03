@@ -9,10 +9,8 @@
 
 
     <ShellContent Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}" />
-    
+
     <TabBar >
-        
-        
         <ShellContent Title="Chats" Route="Chats" ContentTemplate="{DataTemplate local:Chats}" />
         <ShellContent Title="Groups" Route="Groups" ContentTemplate="{DataTemplate local:Groups}" />
         <ShellContent Title="Settings" Route="Settings" ContentTemplate="{DataTemplate local:Settings}" />

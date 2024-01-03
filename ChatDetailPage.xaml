@@ -3,17 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="da_bbeest_aappp.ChatDetailPage"
              Title="ChatDetailPage">
-    <ContentPage.Resources>
-        <x:Array x:Key="MessagesArray" Type="{x:Type x:String}">
-            <x:String>Hallo!</x:String>
-            <x:String>Wie geht's?</x:String>
-            <x:String>Mir geht es gut, danke!</x:String>
-            <x:String>Was machst du gerade?</x:String>
-            <x:String>Ich arbeite an meinem .NET MAUI Projekt.</x:String>
-        </x:Array>
-    </ContentPage.Resources>
-
+ 
     <VerticalStackLayout>
+        <Button Text="Back"
+                    Clicked="OnBackButtonClicked"
+                    HorizontalOptions="Start"/>
         <Label x:Name="NameLabel" FontAttributes="Bold" />
 
         <!-- Chat Messages -->
