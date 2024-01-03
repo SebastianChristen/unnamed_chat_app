@@ -1,9 +1,12 @@
+using System.Collections.ObjectModel;
+
 namespace da_bbeest_aappp;
 
 [QueryProperty("Name", "name")]
 public partial class ChatDetailPage : ContentPage
 
 {
+    public ObservableCollection<string> Messages { get; set; }
 
     private string name;
     public string Name
@@ -18,7 +21,28 @@ public partial class ChatDetailPage : ContentPage
     public ChatDetailPage()
 	{
 		InitializeComponent();
-	}
+
+        Messages = new ObservableCollection<string>
+        {
+            "Hallo!",
+            "Wie gehts?",
+            "Mir geht es gut, danke!",
+            "Was machst du gerade?",
+            "Ich arbeite an meinem .NET MAUI Projekt."
+        };
+
+        MessagesCollectionView.ItemsSource = Messages;
+    }
+    private void OnSendClicked(object sender, EventArgs e)
+    {
+        if (!string.IsNullOrWhiteSpace(MessageEntry.Text))
+        {
+            Messages.Add(MessageEntry.Text);
+            MessageEntry.Text = string.Empty;
+            // Scroll to the new message
+            MessagesCollectionView.ScrollTo(Messages.Count - 1);
+        }
+    }
 
     private void LoadChat(string name)
     {
