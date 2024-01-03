@@ -11,9 +11,9 @@
 
             <!-- Logo -->
             <Image
-                Source="dotnet_bot.png" 
-                WidthRequest="100"
-                HeightRequest="100"
+                Source="ucac_logo.png" 
+                WidthRequest="200"
+                HeightRequest="200"
                 HorizontalOptions="Center" />
 
             <!-- App Name Label -->
