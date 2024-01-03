@@ -6,6 +6,13 @@
 
     <ScrollView>
         <VerticalStackLayout Spacing="25">
+            <!-- Header Row -->
+            <HorizontalStackLayout Padding="10" Spacing="10">
+                <Label Text="Group Name" WidthRequest="200" FontAttributes="Bold"/>
+                <Label Text="following" HorizontalOptions="EndAndExpand" FontAttributes="Bold"/>
+            </HorizontalStackLayout>
+
+            <!-- CollectionView for Group Items -->
             <CollectionView>
                 <CollectionView.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
@@ -17,11 +24,8 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <HorizontalStackLayout Padding="10" Spacing="10" VerticalOptions="Center">
-                            
                             <Image Source="group_pic.png" WidthRequest="50" HeightRequest="50" Aspect="AspectFill"/>
-                            
                             <Label Text="{Binding .}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" WidthRequest="150"/>
-                           
                             <CheckBox VerticalOptions="Center" HorizontalOptions="End"/>
                         </HorizontalStackLayout>
                     </DataTemplate>
@@ -29,5 +33,6 @@
             </CollectionView>
         </VerticalStackLayout>
     </ScrollView>
-    
+
+
 </ContentPage>
