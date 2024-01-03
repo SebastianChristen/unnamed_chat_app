@@ -23,10 +23,9 @@
             </CollectionView.ItemsSource>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <HorizontalStackLayout Padding="10">
-                        <!-- Replace with your image source -->
-                        <Image Source="pfp.jpg" WidthRequest="50" HeightRequest="50" Aspect="AspectFill"/>
-                        <Label Text="{Binding .}" VerticalOptions="Center" />
+                    <HorizontalStackLayout Padding="10" Spacing="10">
+                        <Image Source="pfp.jpg" WidthRequest="61" HeightRequest="50" Aspect="AspectFill" Margin="0,5,0,5"/>
+                        <Label Text="{Binding .}" VerticalOptions="CenterAndExpand" />
                     </HorizontalStackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
