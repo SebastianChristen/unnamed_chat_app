@@ -28,8 +28,20 @@
 
         <!-- Chat Input -->
         <StackLayout Orientation="Horizontal" Padding="10" BackgroundColor="#EEEEEE">
-            <Entry x:Name="MessageEntry" HorizontalOptions="FillAndExpand" Placeholder="deine Nachricht"/>
-            <Button Text="senden" Clicked="OnSendClicked"/>
+            <Entry x:Name="MessageEntry"
+           HorizontalOptions="FillAndExpand"
+           Placeholder="deine Nachricht"
+           TextChanged="MessageEntry_TextChanged"/>
+            <Button Text="senden"
+            Clicked="OnSendClicked"/>
+        
+
+        <Label x:Name="MessageErrorLabel"
+           Text="Please enter a message to send"
+           TextColor="Red"
+           IsVisible="False"
+           HorizontalOptions="Center"
+           Margin="0,10,0,0" />
         </StackLayout>
 
     </VerticalStackLayout>

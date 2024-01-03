@@ -24,11 +24,19 @@
                 HorizontalOptions="Center" />
 
             <!-- Entry for Name -->
-            <Entry
+            <Entry x:Name="NameEntry"
                 Placeholder="Your name"
                 FontSize="18"
                 HorizontalOptions="Fill"
+                TextChanged="NameEntry_TextChanged" 
                 Margin="0,0,0,10" />
+
+            <Label x:Name="ErrorLabel"
+               Text="Please enter a name to continue"
+               TextColor="Red"
+               IsVisible="False"
+               HorizontalOptions="Fill"
+               Margin="0,0,0,10" /> 
 
             <!-- Welcome Back Message -->
             <Label

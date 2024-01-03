@@ -39,9 +39,21 @@ public partial class ChatDetailPage : ContentPage
         {
             Messages.Add(MessageEntry.Text);
             MessageEntry.Text = string.Empty;
+            MessageErrorLabel.IsVisible = false;
             // Scroll to the new message
             MessagesCollectionView.ScrollTo(Messages.Count - 1);
         }
+        else
+        {
+            // Show error message
+            MessageErrorLabel.IsVisible = true;
+        }
+    }
+
+    private void MessageEntry_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        // Hide error message when the user starts typing
+        MessageErrorLabel.IsVisible = false;
     }
 
     private void LoadChat(string name)
