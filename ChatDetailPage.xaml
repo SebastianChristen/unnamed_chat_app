@@ -36,7 +36,7 @@
                         <!-- Chat message bubble -->
                         <Frame Grid.Column="1" 
                                 
-                             
+                               MinimumWidthRequest="100"                           
                                HorizontalOptions="{Binding HorizontalLayoutOptions}"
                                Padding="10"
                                >
@@ -58,6 +58,12 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
+        <Label x:Name="MessageErrorLabel"
+           Text="Please enter a message to send"
+           TextColor="Red"
+           IsVisible="False"
+           HorizontalOptions="Center"
+           Margin="0,10,0,0" />
         <!-- Chat Input -->
         <StackLayout Orientation="Horizontal" Padding="10" BackgroundColor="#EEEEEE">
             <Entry x:Name="MessageEntry"
@@ -66,14 +72,8 @@
                    TextChanged="MessageEntry_TextChanged"/>
             <Button Text="senden"
                     Clicked="OnSendClicked"/>
-
-
-            <Label x:Name="MessageErrorLabel"
-               Text="Please enter a message to send"
-               TextColor="Red"
-               IsVisible="False"
-               HorizontalOptions="Center"
-               Margin="0,10,0,0" />
         </StackLayout>
+
+        
     </VerticalStackLayout>
 </ContentPage>
