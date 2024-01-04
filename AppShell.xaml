@@ -1,19 +1,33 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="da_bbeest_aappp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:da_bbeest_aappp"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
 
-
-
+    
+    
     <ShellContent Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}" />
+    
+    <TabBar>
+        <ShellContent
+            Title="Chats" 
+            Icon="chat.png"
+            Route="Chats" 
+            ContentTemplate="{DataTemplate local:Chats}" />
 
-    <TabBar >
-        <ShellContent Title="Chats" Route="Chats" ContentTemplate="{DataTemplate local:Chats}" />
-        <ShellContent Title="Groups" Route="Groups" ContentTemplate="{DataTemplate local:Groups}" />
-        <ShellContent Title="Settings" Route="Settings" ContentTemplate="{DataTemplate local:Settings}" />
+        <ShellContent 
+            Title="Groups" 
+            Icon="group.png"
+            Route="Groups" 
+            ContentTemplate="{DataTemplate local:Groups}" />
+
+        <ShellContent 
+            Title="Settings" 
+            Icon="settings.png"
+            Route="Settings" 
+            ContentTemplate="{DataTemplate local:Settings}" />
     </TabBar>
 
     <ShellContent Route="ChatDetailPage" ContentTemplate="{DataTemplate local:ChatDetailPage}" />
