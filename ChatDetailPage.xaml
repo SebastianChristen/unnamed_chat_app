@@ -1,71 +1,77 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="da_bbeest_aappp.ChatDetailPage"
              Title="ChatDetailPage">
 
-    <VerticalStackLayout>
-        <Button Text="Back"
-                Clicked="OnBackButtonClicked"
-                HorizontalOptions="Start"/>
-        <Label x:Name="NameLabel" FontAttributes="Bold" />
+    <Grid>     
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>           
+            <RowDefinition Height="Auto"/>         
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0">
+            <Button Text="Back"
+                    Clicked="OnBackButtonClicked"
+                    HorizontalOptions="Start"/>
+            <Label x:Name="NameLabel" FontAttributes="Bold" />
 
-        <!-- Chat Messages -->
-        <CollectionView x:Name="MessagesCollectionView"
-                        VerticalOptions="FillAndExpand">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Padding="5">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
+            <!-- Chat Messages -->
+            <CollectionView x:Name="MessagesCollectionView"
+                 VerticalOptions="FillAndExpand">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
 
-                        <!-- Profile picture for incoming message -->
-                        <Image Grid.Column="0"
-                               Source="pfp.jpg" 
-                               IsVisible="{Binding IsIncoming}"
-                               Margin="10"
-                               HeightRequest="40"
-                               Aspect="AspectFill"
-                               HorizontalOptions="Start"
-                               VerticalOptions="End"/>
+                            <!-- Profile picture for incoming message -->
+                            <Image Grid.Column="0"
+                        Source="pfp.jpg" 
+                        IsVisible="{Binding IsIncoming}"
+                        Margin="10"
+                        HeightRequest="40"
+                        Aspect="AspectFill"
+                        HorizontalOptions="Start"
+                        VerticalOptions="End"/>
 
-                        <!-- Chat message bubble -->
-                        <!-- Chat message bubble -->
-                        <Frame Grid.Column="1" 
-                                
-                               MinimumWidthRequest="100"                           
-                               HorizontalOptions="{Binding HorizontalLayoutOptions}"
-                               Padding="10"
-                               >
-                            <Label Text="{Binding Text}"/>
-                        </Frame>
+                            <!-- Chat message bubble -->
+                            <!-- Chat message bubble -->
+                            <Frame Grid.Column="1" 
+                         
+                        MinimumWidthRequest="100"                           
+                        HorizontalOptions="{Binding HorizontalLayoutOptions}"
+                        Padding="10"
+                        >
+                                <Label Text="{Binding Text}"/>
+                            </Frame>
 
 
-                        <!-- Profile picture for outgoing message (optional, if different) -->
-                        <Image Grid.Column="2"
-                               Source="pfp.jpg" 
-                               IsVisible="{Binding IsNotIncoming}"
-                               Margin="10"
-                               HeightRequest="40"
-                               Aspect="AspectFill"
-                               HorizontalOptions="End"
-                               VerticalOptions="End"/>
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+                            <!-- Profile picture for outgoing message (optional, if different) -->
+                            <Image Grid.Column="2"
+                        Source="pfp.jpg" 
+                        IsVisible="{Binding IsNotIncoming}"
+                        Margin="10"
+                        HeightRequest="40"
+                        Aspect="AspectFill"
+                        HorizontalOptions="End"
+                        VerticalOptions="End"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
-        <Label x:Name="MessageErrorLabel"
-           Text="Please enter a message to send"
-           TextColor="Red"
-           IsVisible="False"
-           HorizontalOptions="Center"
-           Margin="0,10,0,0" />
+            <Label x:Name="MessageErrorLabel"
+    Text="Please enter a message to send"
+    TextColor="Red"
+    IsVisible="False"
+    HorizontalOptions="Center"
+    Margin="0,10,0,0" />
+        </StackLayout>
         <!-- Chat Input -->
-        <StackLayout Orientation="Horizontal" Padding="10" BackgroundColor="#EEEEEE">
+        <StackLayout Grid.Row="1" Orientation="Horizontal" Padding="10" BackgroundColor="#EEEEEE">
             <Entry x:Name="MessageEntry"
                    HorizontalOptions="FillAndExpand"
                    Placeholder="deine Nachricht"
@@ -75,5 +81,5 @@
         </StackLayout>
 
         
-    </VerticalStackLayout>
+    </Grid>
 </ContentPage>
