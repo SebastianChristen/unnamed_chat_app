@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="da_bbeest_aappp.ChatDetailPage"
              Title="ChatDetailPage">
- 
+
     <VerticalStackLayout>
         <Button Text="Back"
-                    Clicked="OnBackButtonClicked"
-                    HorizontalOptions="Start"/>
+                Clicked="OnBackButtonClicked"
+                HorizontalOptions="Start"/>
         <Label x:Name="NameLabel" FontAttributes="Bold" />
 
         <!-- Chat Messages -->
@@ -15,13 +15,45 @@
                         VerticalOptions="FillAndExpand">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame CornerRadius="10"
-                           BackgroundColor="#ADD8E6"
-                           HorizontalOptions="End"
-                           Padding="10"
-                           Margin="50,0,0,0">
-                        <Label Text="{Binding .}"/>
-                    </Frame>
+                    <Grid Padding="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Profile picture for incoming message -->
+                        <Image Grid.Column="0"
+                               Source="pfp.jpg" 
+                               IsVisible="{Binding IsIncoming}"
+                               Margin="10"
+                               HeightRequest="40"
+                               Aspect="AspectFill"
+                               HorizontalOptions="Start"
+                               VerticalOptions="End"/>
+
+                        <!-- Chat message bubble -->
+                        <!-- Chat message bubble -->
+                        <Frame Grid.Column="1" 
+                                
+                             
+                               HorizontalOptions="{Binding HorizontalLayoutOptions}"
+                               Padding="10"
+                               >
+                            <Label Text="{Binding Text}"/>
+                        </Frame>
+
+
+                        <!-- Profile picture for outgoing message (optional, if different) -->
+                        <Image Grid.Column="2"
+                               Source="pfp.jpg" 
+                               IsVisible="{Binding IsNotIncoming}"
+                               Margin="10"
+                               HeightRequest="40"
+                               Aspect="AspectFill"
+                               HorizontalOptions="End"
+                               VerticalOptions="End"/>
+                    </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
@@ -29,20 +61,19 @@
         <!-- Chat Input -->
         <StackLayout Orientation="Horizontal" Padding="10" BackgroundColor="#EEEEEE">
             <Entry x:Name="MessageEntry"
-           HorizontalOptions="FillAndExpand"
-           Placeholder="deine Nachricht"
-           TextChanged="MessageEntry_TextChanged"/>
+                   HorizontalOptions="FillAndExpand"
+                   Placeholder="deine Nachricht"
+                   TextChanged="MessageEntry_TextChanged"/>
             <Button Text="senden"
-            Clicked="OnSendClicked"/>
-        
+                    Clicked="OnSendClicked"/>
 
-        <Label x:Name="MessageErrorLabel"
-           Text="Please enter a message to send"
-           TextColor="Red"
-           IsVisible="False"
-           HorizontalOptions="Center"
-           Margin="0,10,0,0" />
+
+            <Label x:Name="MessageErrorLabel"
+               Text="Please enter a message to send"
+               TextColor="Red"
+               IsVisible="False"
+               HorizontalOptions="Center"
+               Margin="0,10,0,0" />
         </StackLayout>
-
     </VerticalStackLayout>
 </ContentPage>

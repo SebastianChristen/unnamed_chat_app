@@ -1,12 +1,33 @@
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using Microsoft.Maui.Controls;
 
 namespace da_bbeest_aappp;
 
 [QueryProperty("Name", "name")]
 public partial class ChatDetailPage : ContentPage
-
 {
-    public ObservableCollection<string> Messages { get; set; }
+    // Define your MessageViewModel class inside ChatDetailPage for simplicity
+    public class MessageViewModel : INotifyPropertyChanged
+    {
+
+        public string Text { get; set; }
+        public bool IsIncoming { get; set; }
+        public string SenderImage => "pfp.jpg";
+        //public Color MessageColor => IsIncoming ? Color.Blue : Color.LightBlue;
+        public LayoutOptions HorizontalLayoutOptions => IsIncoming ? LayoutOptions.Start : LayoutOptions.End;
+        public bool IsNotIncoming => !IsIncoming;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+
+    public ObservableCollection<MessageViewModel> MessageViewModels { get; set; }
 
     private string name;
     public string Name
@@ -19,29 +40,31 @@ public partial class ChatDetailPage : ContentPage
     }
 
     public ChatDetailPage()
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
 
-        Messages = new ObservableCollection<string>
+        MessageViewModels = new ObservableCollection<MessageViewModel>
         {
-            "Hallo!",
-            "Wie gehts?",
-            "Mir geht es gut, danke!",
-            "Was machst du gerade?",
-            "Ich arbeite an meinem .NET MAUI Projekt."
+            new MessageViewModel { Text = "Hallo!", IsIncoming = true },
+            new MessageViewModel { Text = "Wie gehts?", IsIncoming = false },
+            new MessageViewModel { Text = "Gut, dir?", IsIncoming = true },
+            new MessageViewModel { Text = "mir gehts gut", IsIncoming = false },
+            new MessageViewModel { Text = "was machst du?", IsIncoming = true },
+            // Add more messages here, setting IsIncoming appropriately
         };
 
-        MessagesCollectionView.ItemsSource = Messages;
+        MessagesCollectionView.ItemsSource = MessageViewModels;
     }
+
     private void OnSendClicked(object sender, EventArgs e)
     {
         if (!string.IsNullOrWhiteSpace(MessageEntry.Text))
         {
-            Messages.Add(MessageEntry.Text);
+            MessageViewModels.Add(new MessageViewModel { Text = MessageEntry.Text, IsIncoming = false });
             MessageEntry.Text = string.Empty;
             MessageErrorLabel.IsVisible = false;
             // Scroll to the new message
-            MessagesCollectionView.ScrollTo(Messages.Count - 1);
+            MessagesCollectionView.ScrollTo(MessageViewModels.Count - 1);
         }
         else
         {
