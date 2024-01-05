@@ -8,12 +8,12 @@
 
             <!-- Slider (Switch) for notifications -->
             <Label Text="Benachrichtigungen" FontSize="Medium" />
-            <Switch HorizontalOptions="Start" />
+            <Switch HorizontalOptions="Start" IsToggled="True" />
 
             <!-- Radio Buttons for name visibility options -->
             <Label Text="Name Sichtbarkeit" FontSize="Medium" />
-            
-            <RadioButton Content="name für alle sichtbar" />
+
+            <RadioButton Content="name für alle sichtbar" IsChecked="True" />
             <RadioButton Content="name nur für gruppe" />
             <RadioButton Content="name unsichtbar" />
 
@@ -21,7 +21,11 @@
             <!-- DatePicker for selecting available dates -->
             <Label Text="Verfügbar ab:" FontSize="Medium" />
             <DatePicker />
+            <!-- TimePicker for selecting available time -->
+            <Label Text="Verfügbare Uhrzeit:" FontSize="Medium" />
+            <TimePicker />
 
         </VerticalStackLayout>
     </ScrollView>
+
 </ContentPage>
