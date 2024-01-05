@@ -13,19 +13,19 @@
     <TabBar>
         <ShellContent
             Title="Chats" 
-            Icon="chat.png"
-            Route="Chats" 
+            Icon="chat_solid.png"
+            Route="Chats"
             ContentTemplate="{DataTemplate local:Chats}" />
 
         <ShellContent 
             Title="Groups" 
-            Icon="group.png"
+            Icon="group_solid.png"
             Route="Groups" 
             ContentTemplate="{DataTemplate local:Groups}" />
 
         <ShellContent 
             Title="Settings" 
-            Icon="settings.png"
+            Icon="setting_solid.png"
             Route="Settings" 
             ContentTemplate="{DataTemplate local:Settings}" />
     </TabBar>
