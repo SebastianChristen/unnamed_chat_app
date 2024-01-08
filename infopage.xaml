@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="da_bbeest_aappp.infopage"
+             Title="About the App">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <Label 
+                Text="About the App"
+                FontSize="Large"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+            <Label 
+                Text="App Name: Unnamed-Chat-App"
+                Margin="0,10,0,0" />
+
+            <Label 
+                Text="Version: alpha-00"
+                Margin="0,5,0,0" />
+
+            <Label 
+                Text="Developed by: UCAC - Unnamed-Chat-App-Company"
+                Margin="0,5,0,0" />
+
+            <Label 
+                Text="Description:"
+                FontAttributes="Bold"
+                Margin="0,10,0,0" />
+
+            <Label 
+                Text="This app is designed to chat with your friends. You can send messages, follow or unfollow groups, change settings or read the info page. Just click on the icons on the top."
+                Margin="0,5,0,0" />
+
+            <Label 
+                Text="Contact Information:"
+                FontAttributes="Bold"
+                Margin="0,10,0,0" />
+
+            <Label 
+                Text="For support or feedback, please don't contact us."
+                Margin="0,5,0,0" />
+
+            <!-- FAQ Abschnitt -->
+            <Label Text="Häufig gestellte Fragen (FAQ)"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,10,0,10"/>
+
+            <!-- Frage 1 -->
+            <Label Text="Wie kann ich Nachrichten löschen oder bearbeiten?"
+                   FontAttributes="Bold"/>
+            <Label Text="Diese Funktion steht in der aktuellen Version leider noch nicht zur Verfügung."
+                   Margin="0,0,0,10"/>
+
+            <!-- Frage 2 -->
+            <Label Text="Wie kann ich Benachrichtigungen stummschalten?"
+                   FontAttributes="Bold"/>
+            <Label Text="Um Benachrichtigungen stummschalten, öffnen Sie die Einstellungen und setzen Sie Benachrichtigungen aus."
+                   Margin="0,0,0,10"/>
+
+            <!-- Frage 3 -->
+            <Label Text="Was kann ich tun, wenn ich Probleme mit der App habe?"
+                   FontAttributes="Bold"/>
+            <Label Text="Bei technischen Problemen oder anderen Schwierigkeiten mit der App können Sie nichts tun. Die App wird nicht weiterentwickelt."
+                   Margin="0,0,0,10"/>
+
+            <!-- Frage 4 -->
+            <Label Text="Wie sicher sind meine Daten und Konversationen in dieser App?"
+                   FontAttributes="Bold"/>
+            <Label Text="Die App kann nicht mal Daten senden oder aufs Internet zugreifen. Wir versichern Ihnen, dass Ihre Konversationen privat bleiben und Ihre persönlichen Daten geschützt sind."
+                   Margin="0,0,0,10"/>
+
+            <!-- Add any additional information you want to include about your app -->
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

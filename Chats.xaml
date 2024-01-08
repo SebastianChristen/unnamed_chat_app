@@ -3,8 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="da_bbeest_aappp.Chats"
              Title="Chats">
+ 
     <ScrollView>
+        <VerticalStackLayout>
+
+            <Label 
+Text="Chats"
+FontSize="Large"
+FontAttributes="Bold"
+HorizontalOptions="Center" />
+
         <CollectionView SelectionMode="Single" SelectionChanged="OnSelectionChanged">
+            
             <CollectionView.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>Emily Johnson</x:String>
@@ -30,6 +40,7 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+            </VerticalStackLayout>
     </ScrollView>
 
 </ContentPage>

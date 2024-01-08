@@ -6,7 +6,15 @@
 
     <ScrollView>
         <VerticalStackLayout Spacing="25">
-            <!-- Header Row -->
+
+           
+
+                <Label 
+Text="Groups"
+FontSize="Large"
+FontAttributes="Bold"
+HorizontalOptions="Center" />
+                <!-- Header Row -->
             <HorizontalStackLayout Padding="10" Spacing="10">
                 <Label Text="Group Name" WidthRequest="200" FontAttributes="Bold"/>
                 <Label Text="following" HorizontalOptions="EndAndExpand" FontAttributes="Bold"/>

@@ -28,6 +28,12 @@
             Icon="setting_solid.png"
             Route="Settings" 
             ContentTemplate="{DataTemplate local:Settings}" />
+
+        <ShellContent 
+            Title="Info" 
+            Icon="info.png"
+            Route="infopage" 
+            ContentTemplate="{DataTemplate local:infopage}" />
     </TabBar>
 
     <ShellContent Route="ChatDetailPage" ContentTemplate="{DataTemplate local:ChatDetailPage}" />

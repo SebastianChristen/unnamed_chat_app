@@ -5,8 +5,15 @@
              Title="Settings">
     <ScrollView>
         <VerticalStackLayout Spacing="15" Padding="30">
+            
 
-            <!-- Slider (Switch) for notifications -->
+                <Label 
+Text="Settings"
+FontSize="Large"
+FontAttributes="Bold"
+HorizontalOptions="Center" />
+
+                <!-- Slider (Switch) for notifications -->
             <Label Text="Benachrichtigungen" FontSize="Medium" />
             <Switch HorizontalOptions="Start" IsToggled="True" />
 
