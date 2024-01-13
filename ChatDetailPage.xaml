@@ -1,85 +1,85 @@
 <?xml version="1.0" encoding="utf-8" ?>
-    <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="da_bbeest_aappp.ChatDetailPage"
              Title="ChatDetailPage">
 
-    <Grid>     
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>           
-            <RowDefinition Height="Auto"/>         
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackLayout Grid.Row="0">
             <Button Text="Back"
-                    Clicked="OnBackButtonClicked"
-                    HorizontalOptions="Start"/>
+              Clicked="OnBackButtonClicked"
+              HorizontalOptions="Start"/>
             <Label x:Name="NameLabel" FontAttributes="Bold" />
 
-            <!-- Chat Messages -->
-            <CollectionView x:Name="MessagesCollectionView"
+            <CollectionView Grid.Row="0"
+                 x:Name="MessagesCollectionView"
                  VerticalOptions="FillAndExpand">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Padding="5">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
 
-                            <!-- Profile picture for incoming message -->
-                            <Image Grid.Column="0"
-                   Source="{Binding SenderImage}" 
-                   IsVisible="{Binding IsIncoming}"
-                   Margin="10"
-                   WidthRequest="50" HeightRequest="50"
-                   Aspect="AspectFill"
-                   HorizontalOptions="Start"
-                   VerticalOptions="End"/>
+                        <!-- Pfp für andere -->
+                        <Image Grid.Column="0"
+                               Source="{Binding SenderImage}" 
+                               IsVisible="{Binding IsIncoming}"
+                               Margin="10"
+                               WidthRequest="50" HeightRequest="50"
+Aspect="AspectFill"
+HorizontalOptions="Start"
+VerticalOptions="End"/>
+                        <!-- text -->
+                        <Frame Grid.Column="1"
+                           BackgroundColor="{Binding MessageBackgroundColor}"
+                           Padding="10"
+                           HorizontalOptions="{Binding HorizontalLayoutOptions}"
+                           VerticalOptions="Center"
+                           CornerRadius="15">
+                            <Label Text="{Binding Text}"
+                               LineBreakMode="NoWrap" />
+                        </Frame>
 
-                            <!-- Chat message bubble -->
-                            <!-- Chat message bubble -->
-                            <Frame Grid.Column="1" 
-                         
-                        MinimumWidthRequest="100"                           
-                        HorizontalOptions="{Binding HorizontalLayoutOptions}"
-                        Padding="10"
-                        >
-                                <Label Text="{Binding Text}"/>
-                            </Frame>
+                        <!-- pfp für user-->
+                        <Image Grid.Column="2"
+                          Source="pfp.jpg"  
+                           IsVisible="{Binding IsNotIncoming}"
+                           Margin="10"
+                           WidthRequest="50" HeightRequest="40"
+                           Aspect="AspectFill"
+                           HorizontalOptions="End"
+                           VerticalOptions="End"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
-
-                            <!-- Profile picture for outgoing message (optional, if different) -->
-                            <Image Grid.Column="2"
-                        Source="pfp.jpg" 
-                        IsVisible="{Binding IsNotIncoming}"
-                        Margin="10"
-                        WidthRequest="50" HeightRequest="50"
-                        Aspect="AspectFill"
-                        HorizontalOptions="End"
-                        VerticalOptions="End"/>
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-
-            <Label x:Name="MessageErrorLabel"
-    Text="Please enter a message to send"
-    TextColor="Red"
-    IsVisible="False"
-    HorizontalOptions="Center"
-    Margin="0,10,0,0" />
+        <!-- Error -->
+        <Label x:Name="MessageErrorLabel"
+           Grid.Row="0"
+           Text="Please enter a message to send"
+           TextColor="Red"
+           IsVisible="False"
+           HorizontalOptions="Center"
+           Margin="0,10,0,0" />
         </StackLayout>
-        <!-- Chat Input -->
+        <!-- eingabe -->
         <StackLayout Grid.Row="1" Orientation="Horizontal" Padding="10" BackgroundColor="#EEEEEE">
             <Entry x:Name="MessageEntry"
-                   HorizontalOptions="FillAndExpand"
-                   Placeholder="deine Nachricht"
-                   TextChanged="MessageEntry_TextChanged"/>
+               HorizontalOptions="FillAndExpand"
+               Placeholder="deine Nachricht"
+               TextChanged="MessageEntry_TextChanged"/>
             <Button Text="senden"
-                    Clicked="OnSendClicked"/>
+                Clicked="OnSendClicked"/>
         </StackLayout>
-
+        
         
     </Grid>
 </ContentPage>
