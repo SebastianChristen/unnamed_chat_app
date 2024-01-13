@@ -9,21 +9,21 @@
             Padding="30"
             VerticalOptions="Start">
 
-            <!-- Logo -->
+           
             <Image
                 Source="ucac_logo.png" 
                 WidthRequest="200"
                 HeightRequest="200"
                 HorizontalOptions="Center" />
 
-            <!-- App Name Label -->
+            
             <Label
                 Text="Unnamed Chat App"
                 FontAttributes="Bold"
                 FontSize="22"
                 HorizontalOptions="Center" />
 
-            <!-- Entry for Name -->
+            
             <Entry x:Name="NameEntry"
                 Placeholder="Your name"
                 FontSize="18"
@@ -38,13 +38,13 @@
                HorizontalOptions="Fill"
                Margin="0,0,0,10" /> 
 
-            <!-- Welcome Back Message -->
+          
             <Label
                 Text="Hi there! Nice to see you again."
                 HorizontalOptions="Center"
                 Margin="0,20,0,20" />
 
-            <!-- Start Button -->
+           
             <Button
                 x:Name="GoToChatsButton"
                 Text="Start"

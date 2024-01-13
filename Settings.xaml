@@ -13,11 +13,11 @@ FontSize="Large"
 FontAttributes="Bold"
 HorizontalOptions="Center" />
 
-                <!-- Slider (Switch) for notifications -->
+                
             <Label Text="Benachrichtigungen" FontSize="Medium" />
             <Switch HorizontalOptions="Start" IsToggled="True" />
 
-            <!-- Radio Buttons for name visibility options -->
+         
             <Label Text="Sichtbarkeit deines Namens" FontSize="Medium" />
 
             <RadioButton Content="Name für Alle sichtbar" IsChecked="True" />
@@ -25,10 +25,10 @@ HorizontalOptions="Center" />
             <RadioButton Content="Name unsichtbar" />
 
 
-            <!-- DatePicker for selecting available dates -->
+          
             <Label Text="Verfügbar ab:" FontSize="Medium" />
             <DatePicker />
-            <!-- TimePicker for selecting available time -->
+         
             <Label Text="Verfügbare Uhrzeit:" FontSize="Medium" />
             <TimePicker />
 

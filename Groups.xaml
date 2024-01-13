@@ -14,13 +14,13 @@ Text="Groups"
 FontSize="Large"
 FontAttributes="Bold"
 HorizontalOptions="Center" />
-                <!-- Header Row -->
+                
             <HorizontalStackLayout Padding="10" Spacing="0">
                 <Label Text="Group Name" WidthRequest="200" FontAttributes="Bold"/>
                 <Label Text="following" HorizontalOptions="EndAndExpand" FontAttributes="Bold"/>
             </HorizontalStackLayout>
 
-            <!-- CollectionView for Group Items -->
+            
             <CollectionView>
                 <CollectionView.ItemsSource>
                     <x:Array Type="{x:Type x:String}">

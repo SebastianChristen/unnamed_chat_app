@@ -35,7 +35,7 @@ public partial class ChatDetailPage : ContentPage, INotifyPropertyChanged
             {
                 _imagePath = Uri.UnescapeDataString(value ?? string.Empty);
                 OnPropertyChanged(nameof(ImagePath));
-                LoadChat(_name); // Rufen Sie LoadChat auf, um das Bild zu aktualisieren
+                LoadChat(_name); 
             }
         }
     }
@@ -55,7 +55,7 @@ public partial class ChatDetailPage : ContentPage, INotifyPropertyChanged
         MessageViewModels.Clear();
         MessageViewModels.Add(new MessageViewModel { Text = "Hallo!", IsIncoming = true, SenderImage = ImagePath });
         MessageViewModels.Add(new MessageViewModel { Text = "Wie gehts?", IsIncoming = false, SenderImage = ImagePath });
-        // Weitere Nachrichten hier hinzufügen...
+        
     }
 
     private void OnSendClicked(object sender, EventArgs e)
