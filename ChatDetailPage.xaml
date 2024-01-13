@@ -29,13 +29,13 @@
 
                             <!-- Profile picture for incoming message -->
                             <Image Grid.Column="0"
-                        Source="pfp.jpg" 
-                        IsVisible="{Binding IsIncoming}"
-                        Margin="10"
-                        HeightRequest="40"
-                        Aspect="AspectFill"
-                        HorizontalOptions="Start"
-                        VerticalOptions="End"/>
+                   Source="{Binding SenderImage}" 
+                   IsVisible="{Binding IsIncoming}"
+                   Margin="10"
+                   WidthRequest="50" HeightRequest="50"
+                   Aspect="AspectFill"
+                   HorizontalOptions="Start"
+                   VerticalOptions="End"/>
 
                             <!-- Chat message bubble -->
                             <!-- Chat message bubble -->
@@ -54,7 +54,7 @@
                         Source="pfp.jpg" 
                         IsVisible="{Binding IsNotIncoming}"
                         Margin="10"
-                        HeightRequest="40"
+                        WidthRequest="50" HeightRequest="50"
                         Aspect="AspectFill"
                         HorizontalOptions="End"
                         VerticalOptions="End"/>

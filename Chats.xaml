@@ -13,34 +13,18 @@ FontSize="Large"
 FontAttributes="Bold"
 HorizontalOptions="Center" />
 
-        <CollectionView SelectionMode="Single" SelectionChanged="OnSelectionChanged">
-            
-            <CollectionView.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>Emily Johnson</x:String>
-                    <x:String>Michael Brown</x:String>
-                    <x:String>Emma Wilson</x:String>
-                    <x:String>Oliver Smith</x:String>
-                    <x:String>Isabella Martinez</x:String>
-                    <x:String>Liam Anderson</x:String>
-                    <x:String>Sophia Taylor</x:String>
-                    <x:String>Noah Davis</x:String>
-                    <x:String>Ava Garcia</x:String>
-                    <x:String>William Rodriguez</x:String>
+            <CollectionView SelectionMode="Single" SelectionChanged="OnSelectionChanged" ItemsSource="{Binding ChatUsers}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <HorizontalStackLayout Padding="10" Spacing="10">
+                            <Image Source="{Binding ImagePath}" WidthRequest="50" HeightRequest="50" Aspect="AspectFill" Margin="0,5,0,5"/>
+                            <Label Text="{Binding Name}" VerticalOptions="CenterAndExpand" />
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
-                    <!-- Add more chat names here -->
-                </x:Array>
-            </CollectionView.ItemsSource>
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <HorizontalStackLayout Padding="10" Spacing="10">
-                        <Image Source="pfp.jpg" WidthRequest="61" HeightRequest="50" Aspect="AspectFill" Margin="0,5,0,5"/>
-                        <Label Text="{Binding .}" VerticalOptions="CenterAndExpand" />
-                    </HorizontalStackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-            </VerticalStackLayout>
+        </VerticalStackLayout>
     </ScrollView>
 
 </ContentPage>
