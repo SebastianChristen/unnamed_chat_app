@@ -5,7 +5,7 @@
              Title="Groups">
 
     <ScrollView>
-        <VerticalStackLayout Spacing="25">
+        <VerticalStackLayout Spacing="10">
 
            
 
@@ -15,7 +15,7 @@ FontSize="Large"
 FontAttributes="Bold"
 HorizontalOptions="Center" />
                 <!-- Header Row -->
-            <HorizontalStackLayout Padding="10" Spacing="10">
+            <HorizontalStackLayout Padding="10" Spacing="0">
                 <Label Text="Group Name" WidthRequest="200" FontAttributes="Bold"/>
                 <Label Text="following" HorizontalOptions="EndAndExpand" FontAttributes="Bold"/>
             </HorizontalStackLayout>
@@ -27,6 +27,9 @@ HorizontalOptions="Center" />
                         <x:String>Englisch-Gruppe</x:String>
                         <x:String>Französisch-Gruppe</x:String>
                         <x:String>Hausaufgaben</x:String>
+                        <x:String>Gruppenchat INF2022j</x:String>
+                        <x:String>Gruppenchat INF2022k</x:String>
+                        <x:String>iPhone hate group</x:String>
                     </x:Array>
                 </CollectionView.ItemsSource>
                 <CollectionView.ItemTemplate>

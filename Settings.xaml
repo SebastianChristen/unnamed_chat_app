@@ -18,11 +18,11 @@ HorizontalOptions="Center" />
             <Switch HorizontalOptions="Start" IsToggled="True" />
 
             <!-- Radio Buttons for name visibility options -->
-            <Label Text="Name Sichtbarkeit" FontSize="Medium" />
+            <Label Text="Sichtbarkeit deines Namens" FontSize="Medium" />
 
-            <RadioButton Content="name für alle sichtbar" IsChecked="True" />
-            <RadioButton Content="name nur für gruppe" />
-            <RadioButton Content="name unsichtbar" />
+            <RadioButton Content="Name für Alle sichtbar" IsChecked="True" />
+            <RadioButton Content="Name nur für Gruppenmitglieder sichtbar" />
+            <RadioButton Content="Name unsichtbar" />
 
 
             <!-- DatePicker for selecting available dates -->
